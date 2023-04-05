@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/app.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   
+    <title>L| Movies
+    </title>
+</head>
+<body>
+    <header>
+        <div class="header container">
+            <div class="logo-container">
+                <p>Movies</p>
+                <img src="./assets/logo.svg" width="52"alt="">
+            </div>
+            <div class="nav-container">
+                <nav class="menu">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Trending</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">Popular</a></li>
+                        <li><a href="#">Upcoming</a></li>
+                        <li>
+                            <input type="text" placeholder="Search">
+                            <button class="btn-search" type="submit"><i class="ri-search-line"></i></button>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="user-container">
+                    <button class="btn-primary">Sign In</button>
+                </div>
+        </div>
+       
+        </div>
+    </header>
+    <main>
+        <section class="home-container" style="background-image: url(./assets/doctor-strange.webp);">
+            <div class="container">
+                <div class="banner-movie-info">
+                    <div class="info">
+                        <i class="ri-star-fill primary"></i> 
+                        <span class="rate">7.5</span>
+                        <span> ・ </span>
+                        <span class="time"> 1h 55m</span>
+                        <span> ・ </span>
+                        <span class="category">trending</span>
+                    </div>
+                    <h2 class="title">Doctor Strange in the Multiverse of Madness</h2>
+                    <p class="description">Doctor Strange, with the help of mystical allies both old and new,
+                        traverses the mind-bending and dangerous alternate realitis of the Multiverse to confront
+                        mysterious new adversary.
+                    </p>
+                    <div>
+                        <button class="btn-primary"><i class="ri-play-fill"></i> PLAY TRAILER</button>
+                        <button class="btn-dark"><i class="ri-information-fill"></i> DETAILS</button>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        <section class="container">
+           <h2>Trending</h2>
+        </section>
+        <section class="container">
+            <h2>Categories</h2>
+         </section>
+         <section class="container">
+            <h2>Popular</h2>
+         </section>
+         <section class="container">
+            <h2>Upcoming</h2>
+         </section>
+    </main>
+    <footer>
+        <p>©All Rights reserved | Laura Muñoz 2023</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script defer src="./src/app.js"></script>
+</body>
+</html>

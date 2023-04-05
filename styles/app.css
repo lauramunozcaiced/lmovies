@@ -1,0 +1,206 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --main-color: #e09738;
+    --secondary-color: #8d3b96;
+    --third-color: #f9d023 ;
+    --dark-color: #303030;
+    --light-color: #ffffff94;
+
+    --white: white;
+    --black: black;
+
+    --font: 'Poppins', sans-serif;
+    --font-size: 14px;
+    --font-weight: 500;
+}
+body, html{
+    width: 100%;
+    line-height: 1.2;
+   
+}
+body{
+    background-color: var(--black);
+    font-family: var(--font);
+    font-size: var(--font-size);
+}
+header, main, section{
+    width: 100%;
+    position: relative;
+}
+header{
+    top: 0;
+    height: 108px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    border-bottom: 1px solid #ffffff0a ;
+}
+footer{
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid #ffffff1f ;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+   
+}
+nav ul li{
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+h1,h2,h3,
+h4,h5,h6,
+label,span,p,
+a{
+    color: var(--white);
+    font-weight: var(--font-weight);
+}
+p,span, label{
+    font-size: var(--font-size);
+}
+a,button{
+    text-decoration: none;
+    cursor: pointer;
+    font-family: var(--font);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+}
+h2{
+    margin: 1rem 0;
+    font-size: 26px;
+    font-weight: 700;
+}
+input{
+    font-family: var(--font);
+    padding: .4rem 1rem;
+    border-radius: 4px;
+    border: 2px solid var(--light-color);
+    background-color: transparent;
+    font-size: var(--font-size);
+}
+i{
+    margin: 0;
+    vertical-align: middle;
+}
+/* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder { 
+    color: var(--white);
+    opacity: 1; /* Firefox */
+  }
+  /* Internet Explorer 10-11 */
+  :-ms-input-placeholder { 
+    color: var(--white);
+  }
+  /* Microsoft Edge */
+  ::-ms-input-placeholder { 
+    color: var(--white);
+  }
+
+.header{
+    justify-content: space-between;
+}
+.container{
+    width: 100%;
+    max-width: 1270px;
+    margin: auto;
+    padding: 0 32px;
+    display: flex;
+    z-index: 1;
+}
+.primary{
+    color: var(--main-color);
+}
+.btn-primary{
+    background-color: var(--main-color);
+    color: var(--dark-text);
+    border:none;
+    padding: .5rem 1rem;
+    border-radius: 4px;
+    transition: all .5s;
+    
+}
+
+.btn-primary:hover{
+    background-color: var(--secondary-color);
+    color: var(--white);
+    
+}
+.btn-dark{
+    background-color: var(--dark-color);
+    color: var(--white);
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 4px;
+}
+.btn-search{
+    margin-left: -26px;
+    background-color: transparent;
+    border: none;
+    color: var(--white);
+}
+
+.nav-container{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.logo-container{
+    position: relative;
+}
+.logo-container p{
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    font-size: 10.5px;
+    color: var(--white);
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+}
+.logo-container img{
+    margin-left: 27px;
+}
+.home-container{
+    height: calc(100vh - 30px);
+    margin-top: 30px;
+    display:  flex;
+    align-items: center;
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+}
+.home-container::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0);
+    position: absolute;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(9,9,9,0.6278886554621849) 8%, rgba(255,255,255,0) 27%, rgba(255,255,255,0) 53%, rgba(255,255,255,0) 77%, rgba(8,8,8,0.6334908963585435) 95%, rgba(0,0,0,1) 100%);
+}
+.home-container::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0.8799894957983193) 0%, rgba(0,0,0,0.7091211484593838) 21%, rgba(13,13,13,0.6446953781512605) 29%, rgba(255,252,252,0) 49%, rgba(255,255,255,0) 100%);
+}
+.banner-movie-info{
+    width: 100%;
+    max-width: 500px;
+}
+
+.banner-movie-info .description{
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
