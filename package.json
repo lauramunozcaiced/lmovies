@@ -1,0 +1,23 @@
+{
+  "name": "moviesapp",
+  "version": "1.0.0",
+  "description": "Learning to create an application with API",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lauramunozcaiced/lmovies.git"
+  },
+  "keywords": [
+    "API",
+    "Movies"
+  ],
+  "author": "lauramunozcaiced",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lauramunozcaiced/lmovies/issues"
+  },
+  "homepage": "https://github.com/lauramunozcaiced/lmovies#readme"
+}
