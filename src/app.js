@@ -140,8 +140,8 @@ async function setBanner(){
     detailsBanner.setAttribute('data-movie',bannerData.id);
 }
 
-function setContainerData(container,data,clean = true,lazyload = true){
-   if(data.length == 0){
+function setContainerData(container,data,clean = true,lazyload = true, noFounds = true){
+   if(data.length == 0 && noFounds){
         container.innerHTML = '<p style="margin-top: 2rem">No results found.</p>';
         return;
     }
