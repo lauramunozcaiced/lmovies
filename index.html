@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,82 +9,343 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-   
-    <title>L| Movies
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>L | Streaming
     </title>
 </head>
+
 <body>
     <header>
         <div class="header container">
             <div class="logo-container">
-                <p>Movies</p>
-                <img src="./assets/logo.svg" width="52"alt="">
+                <p>Streaming</p>
+                <img src="./assets/logo.svg" width="52" alt="">
             </div>
-            <div class="nav-container">
+            <div class="nav">
+            <button id="expandableBtn" class="expandable-menu"><i class="ri-menu-3-line"></i></button>
+            <div id="expandableMenu" class="nav-container">
                 <nav class="menu">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Trending</a></li>
-                        <li><a href="#">Categories</a></li>
-                        <li><a href="#">Popular</a></li>
-                        <li><a href="#">Upcoming</a></li>
+                        <li><a href="#" class="language" data-pr="Início" data-en="Home" data-es="Inicio">Home</a></li>
+                        <li><a href="#movies" class="language" data-pr="Filmes" data-en="Movies" data-es="Películas">Movies</a></li>
+                        <!--<li><a href="#series">Series</a></li>-->
+                        <li><a href="#categories" class="language" data-pr="Categorias" data-en="Categories" data-es="Categorías">Categories</a></li>
                         <li>
-                            <input type="text" placeholder="Search">
+                            <input id="search-field" type="text">
                             <button class="btn-search" type="submit"><i class="ri-search-line"></i></button>
+                            <select id="languageSelector">
+                                <option value="es">ES</option>
+                                <option value="en">EN</option>
+                                <option value="pr"><i class="ri-global-line"></i>PT</option>
+                            </select>
                         </li>
                     </ul>
                 </nav>
-                <div class="user-container">
-                    <button class="btn-primary">Sign In</button>
-                </div>
+            </div>
         </div>
-       
         </div>
     </header>
     <main>
-        <section class="home-container" style="background-image: url(./assets/doctor-strange.webp);">
+        <section id="banner" class="banner-container hide">
+            <div class="trailer-video-container">
+                <button class="close"><i class="ri-close-line"></i></button>
+                <iframe id="videoplayer" src="" frameborder="0"></iframe>
+            </div>
             <div class="container">
                 <div class="banner-movie-info">
                     <div class="info">
-                        <i class="ri-star-fill primary"></i> 
-                        <span class="rate">7.5</span>
+                        <i class="ri-star-fill primary "></i>
+                        <span class="rate">7.2</span>
                         <span> ・ </span>
-                        <span class="time"> 1h 55m</span>
-                        <span> ・ </span>
-                        <span class="category">trending</span>
+                        <div class="categories"><div class="bg-primary language" data-pr="fime" data-en="movie" data-es="película">movie</div></div>
                     </div>
-                    <h2 class="title">Doctor Strange in the Multiverse of Madness</h2>
-                    <p class="description">Doctor Strange, with the help of mystical allies both old and new,
-                        traverses the mind-bending and dangerous alternate realitis of the Multiverse to confront
-                        mysterious new adversary.
-                    </p>
-                    <div>
-                        <button class="btn-primary"><i class="ri-play-fill"></i> PLAY TRAILER</button>
-                        <button class="btn-dark"><i class="ri-information-fill"></i> DETAILS</button>
+                    <h2 class="title">Fast X</h2>
+                    <p class="description">Over many missions and against impossible odds, Dom Toretto and 
+                        his family have outsmarted, out-nerved and outdriven every foe in their path. Now, 
+                        they confront the most lethal opponent they've ever faced: A terrifying threat 
+                        emerging from the shadows of the past who's fueled by blood revenge, and who is 
+                        determined to shatter this family and destroy everything—and everyone—that Dom 
+                        loves, forever.</p>
+                    <div class="buttons">
+                        <button id="watch-trailer" class="btn-primary language" data-pr="ASSISTIR AO TRAILER" data-en="WATCH TRAILER" data-es="VER TRAILER"><i class="ri-play-fill"></i> WATCH TRAILER</button>
+                        <button id="details-banner"class="btn-dark language" data-pr="DETALHES" data-en="DETAILS" data-es="DETALLES"><i class="ri-information-fill"></i> DETAILS</button>
                     </div>
+                    
+                </div>
+
+            </div>
+        </section>
+        <section id="home" class="container">
+            <div class="w-100 zone-favorites">
+                <h2 class="language" data-pr="Você gostou" data-en="You liked" data-es="Te gustó" >You liked</h2>
+                <div class="favorites-movies-container container ">
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                </div>   
+            </div>
+            <div class="w-100">
+                <h2 class="language" data-pr="Filmes De Tendência" data-en="Trending Movies" data-es="Películas En Tendencia">Trending Movies</h2>
+                <div class="trending-movies-container container ">
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                </div>   
+            </div>
+            <div class="w-100">
+                <h2 class="language" data-pr="Filmes Mais Bem Avaliados" data-en="Top Rated Movies" data-es="Películas Mejor Calificadas">Top Rated Movies</h2>
+                <div class="toprated-movies-container container">
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                </div>
+            </div>
+            <div class="w-100">
+                <h2 class="language" data-pr="Próximos Filmes" data-en="Upcoming Movies" data-es="Proximamente">Upcoming Movies</h2>
+                <div class="upcoming-movies-container container">
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="movies" class="container movies">
+            <div class="w-100">
+                <h2 class="language" data-pr="Todos Os Filmes" data-en="All Movies" data-es="Todas Las Películas">All Movies</h2>
+                <div class="all-movies-container container">
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                    <div class="media-card">
+                        <div class="media-card-image"><img src="" alt=""/></div>                         
+                        <p class="loading">Fast X</p>                                     
+                    </div>
+                </div>
+                <div class="load-more-button-container">
+                    <button class="btn-dark" id="load-more-movies" data-pr="fime" data-en="movie" data-es="película"><i class="ri-restart-line"></i>  LOAD MORE</button>
                 </div>
                 
             </div>
         </section>
-        <section class="container">
-           <h2>Trending</h2>
+        
+        <section id="categories" class="container categories">
+            <div class="w-100">
+                <h2 class="language" data-pr="Categorias" data-en="Categories" data-es="Categorías">Categories</h2>
+                <div class="categories-container container">
+                    <div class="categories-list"></div>
+                    <div class="movies-filter"></div>
+                    <div class="load-more-button-container">
+                        <button class="btn-dark" id="load-more-movies-by-category"><i class="ri-restart-line"></i>  LOAD MORE</button>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section class="container">
-            <h2>Categories</h2>
-         </section>
-         <section class="container">
-            <h2>Popular</h2>
-         </section>
-         <section class="container">
-            <h2>Upcoming</h2>
-         </section>
+
+        <section id="search" class="container search">
+            <div class="w-100">
+                <h2 class="language" data-pr="Pesquisa" data-en="Search" data-es="Buscar">Search <b></b></h2>
+                <div class="search-movies-container container"></div>
+                <!--<div class="load-more-button-container">
+                    <button class="btn-dark" id="load-more-movies"><i class="ri-restart-line"></i>  LOAD MORE</button>
+                </div>-->
+                
+            </div>
+        </section>
+
+        <section id="details" class="details details-movie">
+            <div class="container">
+                <div class="details-movie-info">
+                    <div class="information-container">
+                        <div class="image"><img src=""></div>
+                        <div class="information">
+                            <h2 class="title"></h2>
+                            <p class="tagline"></p>
+                            <br/><br/>
+                            <div class="rating">
+                                <i class="ri-star-fill primary"></i>
+                                <span class="rate"></span>
+                            </div>
+                            <div class="categories-movie">
+                                
+                            </div>
+                            <p class="description"></p>
+                            
+                        </div>
+                    </div>
+                    <div class="videos-container">
+
+                    </div>
+                    <br/><br/><br/>
+                    <h2 class="language" data-pr="Filmes Semelhantes" data-en="Similar Movies" data-es="Películas Similares">Similar Movies</h2>
+                    <div class="similar-container">
+
+                    </div>
+                    
+                    
+                   
+                </div>
+
+            </div>
+        </section>
+
+        
+        
     </main>
     <footer>
         <p>©All Rights reserved | Laura Muñoz 2023</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./src/secrets.js"></script>
+    <script src="./src/global.js"></script>
+    <script src="./src/nodes.js"></script>
+    <script src="./src/loader.js"></script>
     <script src="./src/app.js"></script>
+    <script src="./src/navigation.js"></script>
+    <script src="./src/helpers.js"></script>
 </body>
+
 </html>
