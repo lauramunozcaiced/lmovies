@@ -92,7 +92,7 @@ function loadDataHomePage(){
         (!topRatedMoviesData)? getTopRatedMovies(): (topRatedMoviesData.length == 0)? getTopRatedMovies(): false;
         (!upcomingMoviesData)? getUpcomingMovies(): (upcomingMoviesData.length == 0)? getUpcomingMovies(): false;
     }
-    
+    toggleZoneFavorites()
     setContainerData(favoritesMoviesContainer, Object.values(likedMovieList()));
     showSection(['home','banner']);
     ischangeLanguage = false;
