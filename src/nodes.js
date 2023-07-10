@@ -1,9 +1,9 @@
 /* Banner Section container */
 const bannerContainer = document.querySelector('.banner-container')
-const rate =  document.querySelector('.banner-container .banner-movie-info .rate');
-const categories =  document.querySelector('.banner-container .banner-movie-info .categories');
-const title =  document.querySelector('.banner-container .banner-movie-info .title');
-const description =  document.querySelector('.banner-container .banner-movie-info .description');
+const rate = document.querySelector('.banner-container .banner-movie-info .rate');
+const categories = document.querySelector('.banner-container .banner-movie-info .categories');
+const title = document.querySelector('.banner-container .banner-movie-info .title');
+const description = document.querySelector('.banner-container .banner-movie-info .description');
 
 const sections = document.querySelectorAll('section');
 
@@ -52,13 +52,14 @@ const header = document.querySelector('header');
 
 /* Details Section Container */
 const buttonsDetails = document.querySelectorAll('.details-view');
-
+const detailsInfo = document.querySelector('#details .details-movie-info');
 const detailsTitle = document.querySelector('#details .details-movie-info .title');
 const detailsTagline = document.querySelector('#details .details-movie-info .tagline');
 const detailsRate = document.querySelector('#details .details-movie-info .rate');
 const detailsCategories = document.querySelector('#details .details-movie-info .categories-movie');
 const detailsDescription = document.querySelector('#details .details-movie-info .description');
 const detailsImage = document.querySelector('#details .details-movie-info .image img');
+const detailsVideos = document.querySelector('#details .videos-container')
 
 const similarContainer = document.querySelector("#details .similar-container");
 
@@ -77,3 +78,6 @@ const languageSelector = document.querySelector('#languageSelector');
 /*Expandable */
 const expandableBtn = document.getElementById('expandableBtn');
 const expandableMenu = document.getElementById('expandableMenu');
+
+/* Logo */
+const logoContainer = document.querySelector('.logo-container');

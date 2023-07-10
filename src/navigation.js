@@ -1,117 +1,120 @@
-window.addEventListener('DOMContentLoaded',navigator,false);
-window.addEventListener('hashchange',navigator,false);
+window.addEventListener('DOMContentLoaded', navigator, false);
+window.addEventListener('hashchange', navigator, false);
 
-searchField.addEventListener('keyup',function(){
-    location.hash = 'search='+this.value;
+searchField.addEventListener('keyup', function () {
+    location.hash = 'search=' + this.value;
     searchTitle.innerText = this.value;
     navigator();
 })
 
-function callNavigatorForDetails(id){
-    location.hash = 'details='+id;
-    console.log('here')
+function callNavigatorForDetails(id) {
+    location.hash = 'details=' + id;
 }
 
-function navigator(){
+function navigator() {
     const routes = {
         'movies': () => loadDataMoviesPage(),
         'categories': () => loadDataCategoriesPage(),
         'search': () => loadDataSearchPage(),
-        'details': () => loadDataMovieDetailsPage(location.hash.replace('#details=','')),
+        'details': () => loadDataMovieDetailsPage(location.hash.replace('#details=', '')),
         'home': () => loadDataHomePage()
     }
     page = 1;
     window.scrollTo(0, 0);
-    for(const route in routes){
-        if(location.hash.startsWith(`#${route}`)){
-            if(route == 'home'){
+    for (const route in routes) {
+        if (location.hash.startsWith(`#${route}`)) {
+            if (route == 'home') {
                 loadDataHomePage();
                 return;
             }
             routes[route]();
             showSection(route)
-           
+
             return;
         }
-        if(!location.hash.startsWith(`#search`)){
+        if (!location.hash.startsWith(`#search`)) {
             searchField.value = '';
-        }else{    
-            if(searchField.value == ''){
-                loadDataHomePage();  
+        } else {
+            if (searchField.value == '') {
+                loadDataHomePage();
                 return;
             }
         }
     }
-    
+
     loadDataHomePage();
 
 }
 
-function showSection(nameSection){
+function showSection(nameSection) {
     sections.forEach(section => {
         section.classList.remove('show');
         section.classList.add('hide');
     })
-    if(typeof nameSection != 'string'){
+    if (typeof nameSection != 'string') {
         nameSection.forEach(section => {
-        const sectionChoose = document.getElementById(section);    
-        if (sectionChoose){
-        sectionChoose.classList.remove('hide');
-        sectionChoose.classList.add('show');
-        }
+            const sectionChoose = document.getElementById(section);
+            if (sectionChoose) {
+                sectionChoose.classList.remove('hide');
+                sectionChoose.classList.add('show');
+            }
         })
-    }else{
+    } else {
         const sectionChoose = document.getElementById(nameSection);
-        if (sectionChoose){
+        if (sectionChoose) {
             sectionChoose.classList.remove('hide');
             sectionChoose.classList.add('show');
         }
     }
 }
 
-function toggleZoneFavorites(){
+function toggleZoneFavorites() {
     const likedList = Object.values(likedMovieList());
-    if(likedList.length > 0){
+    if (likedList.length > 0) {
         zoneFavorites.classList.remove('hidden');
-    }else{
-       zoneFavorites.classList.add('hidden');
+    } else {
+        zoneFavorites.classList.add('hidden');
     }
 }
 
 
-function loadDataHomePage(){
-    console.log('Está cambiando el idioma?',ischangeLanguage)
-    if(ischangeLanguage){
+function loadDataHomePage() {
+    if (ischangeLanguage) {
         setBanner()
         getTrendingsMovies();
         getTopRatedMovies();
-        getUpcomingMovies();     
-    }else{
-        (!bannerMovieData)? setBanner(): false;
-        (!trendingMoviesData)? getTrendingsMovies(): (trendingMoviesData.length == 0)? getTrendingsMovies(): false;
-        (!topRatedMoviesData)? getTopRatedMovies(): (topRatedMoviesData.length == 0)? getTopRatedMovies(): false;
-        (!upcomingMoviesData)? getUpcomingMovies(): (upcomingMoviesData.length == 0)? getUpcomingMovies(): false;
+        getUpcomingMovies();
+    } else {
+        (!bannerMovieData) ? setBanner() : false;
+        (!trendingMoviesData) ? getTrendingsMovies() : (trendingMoviesData.length == 0) ? getTrendingsMovies() : false;
+        (!topRatedMoviesData) ? getTopRatedMovies() : (topRatedMoviesData.length == 0) ? getTopRatedMovies() : false;
+        (!upcomingMoviesData) ? getUpcomingMovies() : (upcomingMoviesData.length == 0) ? getUpcomingMovies() : false;
     }
     toggleZoneFavorites()
-    setContainerData(favoritesMoviesContainer, Object.values(likedMovieList()),true,true,false);
-    showSection(['home','banner']);
+    setContainerData(favoritesMoviesContainer, Object.values(likedMovieList()), true, true, false);
+    showSection(['home', 'banner']);
     ischangeLanguage = false;
 }
 
-function loadDataSearchPage(){
+function loadDataSearchPage() {
     getMoviesBySearch()
 }
 
-function loadDataMoviesPage(){
-    (!allMoviesData)? adderMovies('movie/popular',allMoviesContainer,true): false;
+function loadDataMoviesPage() {
+    (!allMoviesData) ? adderMovies('movie/popular', allMoviesContainer, true) : false;
 }
 
-function loadDataMovieDetailsPage(id){
+function loadDataMovieDetailsPage(id) {
+    detailsInfo.classList.remove('show');
     getMediaDetail(id);
+    setTimeout(() => {
+        detailsInfo.classList.add('show');
+    }, 300);
+
 }
 
-function loadDataCategoriesPage(){
-    (!categoriesData)? getCategories(): false;
+function loadDataCategoriesPage() {
+    (!categoriesData) ? getCategories() : false;
     getMoviesByCategory(28);
 }
 

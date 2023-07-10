@@ -51,7 +51,13 @@ header{
     transition: all .5s;
 }
 header.scrolling{
-    background: linear-gradient(180deg, rgba(0,0,0,0.8799894957983193) 39%, rgba(0,0,0,0.7091211484593838) 52%, rgba(13,13,13,0.6446953781512605) 68%, rgba(255,252,252,0) 96%, rgba(255,255,255,0) 100%);
+    /*background: linear-gradient(180deg, rgba(0,0,0,0.8799894957983193) 39%, rgba(0,0,0,0.7091211484593838) 52%, rgba(13,13,13,0.6446953781512605) 68%, rgba(255,252,252,0) 96%, rgba(255,255,255,0) 100%);
+    */
+    background: #000000f0;
+    height: 78px;
+}
+.scrolling .logo-container {
+    transform: scale(0.85);
 }
 
 section:not(.banner-container){
@@ -264,6 +270,8 @@ i{
 }
 .logo-container{
     position: relative;
+    transition: all .3s;
+    cursor: pointer;
 }
 .logo-container p{
     position: absolute;
@@ -540,6 +548,12 @@ section  ::-webkit-scrollbar-thumb:hover {
     opacity: 1;
 }
 
+.videos-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
 .series, .movies, .categories, .search, .details{
     margin-top: 10rem;
 }
@@ -606,6 +620,14 @@ section  ::-webkit-scrollbar-thumb:hover {
     height: 170px;
     object-fit: cover;
     padding: .5rem;
+}
+
+.details-movie-info{
+    opacity: 0;
+    transition: all .1s;
+}
+.details-movie-info.show{
+    opacity: 1;
 }
 
 .loading{
