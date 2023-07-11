@@ -40,6 +40,9 @@ function navigator() {
                 return;
             }
         }
+        if (!location.hash.startsWith(`#details`)) {
+            detailsVideos.innerHTML = '';
+        }
     }
 
     loadDataHomePage();
