@@ -275,8 +275,8 @@ i{
 }
 .logo-container p{
     position: absolute;
-    top: 19px;
-    left: -23px;
+    top: 12px;
+    left: -10px;
     font-size: 9.5px;
     color: var(--white);
     padding: 0;
